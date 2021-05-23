@@ -2,7 +2,19 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export async function getStaticProps() {
+  const res = await fetch('http://192.168.0.103:3000/categories');
+  const categories = await res.json();
+  return {
+    props: {
+      categories
+    },
+  }
+}
+
+
+
+export default function Home({ categories }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,10 +35,13 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Category Name Goes Here</h2>
 
-          </a>
+          {Object.keys(categories).map((category) => (
+            <a href="#" className={styles.card}>
+              <h2>{category}</h2>
+            </a>
+          ))}
+
         </div>
       </main>
 
