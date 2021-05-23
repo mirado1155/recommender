@@ -1,4 +1,5 @@
 import React from 'react'
+import IndividualItem from '../../../components/IndividualItem'
 
 const category = ({items, cat}) => {
     console.log(items);
@@ -6,9 +7,7 @@ const category = ({items, cat}) => {
         <div>
             <h2>{cat}</h2>
             <ul>
-                {items.map(item => {
-                    return <li>{item}</li>
-                })}
+                
             </ul>
         </div>
     )
