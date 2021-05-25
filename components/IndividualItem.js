@@ -1,16 +1,14 @@
 import React from 'react'
 
-const IndividualItem = ({item}) => {
+const IndividualItem = ({item, removeItem}) => {
 
     return (
         <div>
-            <p>{item} <button onClick = "">X</button></p>
+            <p>{item} <button onClick={removeItem} name={item} value="remove">X</button></p>
         </div>
     );
 }
 
-const removeItem = async () => {
 
-}
 
 export default IndividualItem;
