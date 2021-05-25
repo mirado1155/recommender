@@ -10,15 +10,21 @@ const Recommender = items => {
 
     const choose = () => {
         let list = items.items
+        console.log(list)
         setSelection("Choosing...")
-        setTimeout(() => {
-            setSelection(list[randomNumber(list.length)])
-        }, 618)
+        list.length ? 
+                setTimeout(() => {
+                    setSelection(list[randomNumber(list.length)])
+                }, 618) 
+                : setSelection("There doesn't seem to be anything to recommend. Add items to get recommendations!")
+                
         
     }
 
     const outputArea = value => {
-        return <textarea value={value}></textarea>
+        let output
+        return !value ? <p>Click button to get recommendation</p>
+                : <p>{value}</p>
     }
 
     return (
