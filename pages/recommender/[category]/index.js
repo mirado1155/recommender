@@ -9,6 +9,8 @@ const category = ({categoryItems, cat}) => {
     const updatePageItems = items => {
         setPageItems(items)
     }
+    pageItems.length == 0 ? setPageItems(categoryItems) : null
+    
     console.log(pageItems)
     return (
         <div>
