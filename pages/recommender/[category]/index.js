@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import IndividualItem from '../../../components/IndividualItem'
+import Recommender from '../../../components/Recommender'
 import ItemManager from '../../../components/ItemManager'
 import Link from 'next/link'
 
@@ -17,6 +17,7 @@ const category = ({categoryItems, cat}) => {
                 <button>Go Back</button>
             </Link>
             <ItemManager categoryItems={categoryItems} cat={cat} updatePageItems={updatePageItems} />
+            <Recommender items={pageItems} />
         </div>
     )
 }
