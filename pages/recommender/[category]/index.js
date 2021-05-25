@@ -10,7 +10,10 @@ const category = ({categoryItems, cat}) => {
     }
     console.log(pageItems)
     return (
-        <ItemManager categoryItems={categoryItems} cat={cat} updatePageItems={updatePageItems} />
+        <div>
+            <h2>{cat}</h2>
+            <ItemManager categoryItems={categoryItems} cat={cat} updatePageItems={updatePageItems} />
+        </div>
     )
 }
 
