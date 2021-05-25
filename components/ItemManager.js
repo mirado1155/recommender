@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import IndividualItem from '../components/IndividualItem'
+import styles from '../styles/Home.module.css'
 
 const ItemManager = ({categoryItems, cat, updatePageItems}) => {
     const [items, setItems] = useState()
@@ -61,10 +62,10 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
     });
 
     return (
-        <section id="itemManager">
-                <label htmlFor="toAdd">Add Item: </label>
+        <section id="itemManager" className={styles.leftSection}>
+                <label className={styles.label} htmlFor="toAdd">Add Item: </label>
                 <input type="text" id="toAdd" name={toAdd} value={toAdd} onChange={updateAdd} onKeyUp={handleKeyup}></input>
-                <button onClick={handleClick} value="add" name={toAdd}>Add Item</button>
+                <button className={styles.addButton} onClick={handleClick} value="add" name={toAdd}>Add Item</button>
 
                 <div className="itemViewer">
                     <ul>

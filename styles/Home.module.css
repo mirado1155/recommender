@@ -14,20 +14,37 @@
   font-weight: bold;
   background-color: #f38200;
   color: white;
-  border-radius: 6px;
+
 }
 
 .itemText {
   font-size: 1.33rem;
 }
 
+.label {
+  font-size: 1.3rem;
+}
+
+.leftSection {
+  float: left;
+}
+
 .removeButton {
-  background-color: #f38200;
+  
   border-radius: 10px;
 }
 
 .button, .removeButton, .addButton, .recommendButton {
+  border-radius: 6px;
   cursor: pointer;
+  background-color: #f38200;
+  color: white;
+  font-weight: bold;
+}
+
+.addButton, .recommendButton {
+  padding: .4rem;
+  margin-left: .5rem;
 }
 
 .header {
