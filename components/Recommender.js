@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import styles from '../styles/Home.module.css'
 
 const Recommender = items => {
 
@@ -28,11 +29,11 @@ const Recommender = items => {
     }
 
     return (
-        <div>
+        <section className={styles.section}>
             <h2>Recommender</h2>
             {outputArea(selection)}
             <button onClick={choose}>Recommend!</button>
-        </div>
+        </section>
     )
 }
 

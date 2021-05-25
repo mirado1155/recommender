@@ -17,13 +17,15 @@ const category = ({categoryItems, cat}) => {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <h2 className={styles.title}>{cat}</h2>
+                <h2 className={styles.itemTitle}>{cat}</h2>
                 <Link href="/">
                     <button className={styles.button}>Go Back</button>
                 </Link>
             </header>
-            <ItemManager categoryItems={categoryItems} cat={cat} updatePageItems={updatePageItems} />
-            <Recommender items={pageItems} />
+            <div className={styles.grid}>
+                <ItemManager categoryItems={categoryItems} cat={cat} updatePageItems={updatePageItems} />
+                <Recommender items={pageItems} />
+            </div>
         </div>
     )
 }

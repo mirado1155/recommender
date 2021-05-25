@@ -3,18 +3,14 @@
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .button {
   padding: .7rem;
-  display: inline;
-  font-weight: bold;
-  background-color: #f38200;
-  color: white;
-
+  line-height:initial;
 }
 
 .itemText {
@@ -25,14 +21,6 @@
   font-size: 1.3rem;
 }
 
-.leftSection {
-  float: left;
-}
-
-.removeButton {
-  
-  border-radius: 10px;
-}
 
 .button, .removeButton, .addButton, .recommendButton {
   border-radius: 6px;
@@ -42,6 +30,15 @@
   font-weight: bold;
 }
 
+.removeButton {
+  
+  border-radius: 10px;
+}
+
+.section {
+  margin: 3rem;
+}
+
 .addButton, .recommendButton {
   padding: .4rem;
   margin-left: .5rem;
@@ -49,6 +46,10 @@
 
 .header {
   margin-bottom: 3rem;
+  text-align: center;
+  border-bottom: 2px solid darkgray;
+  /* padding: 3rem; */
+  width: 80%;
 }
 
 .main {
@@ -87,21 +88,10 @@
   text-decoration: underline;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
+.title, .itemTitle {
   font-size: 4rem;
   color: #f38200;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
+  margin: 0;
 }
 
 .code {
@@ -115,11 +105,11 @@
 
 .grid {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   flex-wrap: wrap;
   max-width: 800px;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
 }
 
 .card {
