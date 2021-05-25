@@ -23,7 +23,7 @@ const Recommender = items => {
 
     return (
         <div>
-            <h2>coming soon...</h2>
+            <h2>Recommender</h2>
             {outputArea(selection)}
             <button onClick={choose}>Recommend!</button>
         </div>
