@@ -17,6 +17,19 @@
   border-radius: 6px;
 }
 
+.itemText {
+  font-size: 1.33rem;
+}
+
+.removeButton {
+  background-color: #f38200;
+  border-radius: 10px;
+}
+
+.button, .removeButton, .addButton, .recommendButton {
+  cursor: pointer;
+}
+
 .header {
   margin-bottom: 3rem;
 }
