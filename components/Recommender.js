@@ -10,23 +10,22 @@ const Recommender = items => {
 
     const choose = () => {
         let list = items.items
-
-        console.log(list[randomNumber(list.length)])
+        setSelection("Choosing...")
+        setTimeout(() => {
+            setSelection(list[randomNumber(list.length)])
+        }, 618)
+        
     }
 
     const outputArea = value => {
         return <textarea value={value}></textarea>
     }
 
-    const handleClick = event => {
-        return null
-    }
-
     return (
         <div>
             <h2>coming soon...</h2>
             {outputArea(selection)}
-            <button onClick={handleClick}>Recommend!</button>
+            <button onClick={choose}>Recommend!</button>
         </div>
     )
 }
