@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import IndividualItem from '../../../components/IndividualItem'
 import ItemManager from '../../../components/ItemManager'
+import Link from 'next/link'
 
 const category = ({categoryItems, cat}) => {
     const [pageItems, setPageItems] = useState([])
@@ -12,6 +13,9 @@ const category = ({categoryItems, cat}) => {
     return (
         <div>
             <h2>{cat}</h2>
+            <Link href="/">
+                <button>Go Back</button>
+            </Link>
             <ItemManager categoryItems={categoryItems} cat={cat} updatePageItems={updatePageItems} />
         </div>
     )
