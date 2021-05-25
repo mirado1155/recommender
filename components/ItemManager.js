@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import IndividualItem from '../components/IndividualItem'
 
-const ItemManager = ({categoryItems, cat, itemUpdater}) => {
+const ItemManager = ({categoryItems, cat, updatePageItems}) => {
     const [items, setItems] = useState()
     const [toAdd, setToAdd] = useState("")
 
@@ -48,6 +48,7 @@ const ItemManager = ({categoryItems, cat, itemUpdater}) => {
         action == "add" ? itemsToUpdate.push(name) : null 
         action == "remove" ? itemsToUpdate.splice(itemsToUpdate.indexOf(name), 1) : null
         setItems([...itemsToUpdate])
+        updatePageItems([...itemsToUpdate])
         setToAdd("")
     }
 

@@ -5,12 +5,12 @@ import ItemManager from '../../../components/ItemManager'
 const category = ({categoryItems, cat}) => {
     const [pageItems, setPageItems] = useState([])
 
-    const updateItems = items => {
-        setPageItems([...items])
-        console.log(items)
+    const updatePageItems = items => {
+        setPageItems(items)
     }
+    console.log(pageItems)
     return (
-        <ItemManager categoryItems={categoryItems} cat={cat} itemUpdater={updateItems} />
+        <ItemManager categoryItems={categoryItems} cat={cat} updatePageItems={updatePageItems} />
     )
 }
 
