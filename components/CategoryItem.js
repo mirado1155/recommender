@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
-const CategoryViewer =({category, items}) => {
+const CategoryItem =({category, items}) => {
     return (
         <Link href="/recommender/[category]" as={`recommender/${category}`}>
             <a className={styles.card}>
@@ -11,4 +11,4 @@ const CategoryViewer =({category, items}) => {
     )
 }
 
-export default CategoryViewer
+export default CategoryItem

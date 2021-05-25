@@ -36,7 +36,7 @@ export default function Home({ categories }) {
 
         <div className={styles.grid}>
           {Object.keys(categories).map((category) => (
-            <CategoryItem category={category} items={categories[category]}></CategoryItem>
+            <CategoryItem category={category}></CategoryItem>
           ))}
 
         </div>
