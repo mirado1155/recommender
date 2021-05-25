@@ -50,8 +50,8 @@ const category = ({categoryItems, cat}) => {
             <h2>{cat}</h2>
             <form>
                 <label htmlFor="toAdd">Add Item: </label>
-                <input type="text" id="toAdd" onChange={updateAdd}></input>
-                <button onClick={manageItem} onKeyUp={manageItem} value="add" name={toAdd}>Add Item</button>
+                <input type="text" id="toAdd" onKeyUp={handleKeyup} onChange={updateAdd}></input>
+                <button onClick={handleClick} value="add" name={toAdd}>Add Item</button>
             </form>
             <div className="itemViewer">
             <ul>
