@@ -4,12 +4,11 @@ import ItemManager from '../../../components/ItemManager'
 import Link from 'next/link'
 
 const category = ({categoryItems, cat}) => {
-    const [pageItems, setPageItems] = useState([])
+    const [pageItems, setPageItems] = useState([0])
 
     const updatePageItems = items => {
         setPageItems(items)
     }
-    pageItems.length == 0 ? setPageItems(categoryItems) : null
     
     console.log(pageItems)
     return (
