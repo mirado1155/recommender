@@ -13,7 +13,6 @@ const category = ({categoryItems, cat}) => {
 
     pageItems == undefined ? setPageItems(categoryItems) : null
     
-    console.log(pageItems)
     return (
         <div className={styles.container}>
             <header className={styles.header}>

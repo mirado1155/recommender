@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import CategoryItem from '../components/CategoryItem'
+import React, {useState} from 'react'
 
 export async function getStaticProps() {
   const res = await fetch('http://192.168.0.103:3000/categories');
@@ -15,6 +16,53 @@ export async function getStaticProps() {
 
 
 export default function Home({ categories }) {
+
+  const [cats, setCats] = useState()
+  const [toAdd, setToAdd] = useState("")
+
+  !cats ? setCats(categories) : null
+
+  const handleClick = event => {
+
+  }
+
+  const handleKeyup = () => {
+
+  }
+
+  const updateAdd = event => {
+
+  }
+
+
+  const updateCategoriesList = (name, action) => {
+    let categoriesToUpdate = cats
+    action == "POST" ? categoriesToUpdate.push(name) : null 
+    action == "DELETE" ? categoriesToUpdate.splice(categoriesToUpdate.indexOf(name), 1) : null
+    setCats([...categoriesToUpdate])
+    updatePageItems([...categoriesToUpdate])
+    setToAdd("")
+  }
+
+
+  const manageCategories = async (name, action) => {
+    let bodyName
+    action == "POST" ? bodyName = "name" : null
+    action == "DELETE" ? bodyName = "category" : null
+    const res = await fetch (`http://192.168.0.103:3000/categories/${cat}`, {
+            method: action,
+            body: `{
+              ${bodyName}: ${name},
+            }`,
+            headers: {
+                'Content-type': 'application/json'
+            }
+    })
+    const confirmation = await res.json()
+    console.log(confirmation)
+    res.status < 300 ? updateCategoriesList(name, action) : console.error("Could not fulfill request")
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -36,10 +84,10 @@ export default function Home({ categories }) {
 
         <div className={styles.grid}>
           {Object.keys(categories).map((category) => (
-            <CategoryItem category={category}></CategoryItem>
+            <CategoryItem category={category} handler={handleClick}></CategoryItem>
           ))}
-
         </div>
+        
       </main>
 
       <footer className={styles.footer}>
