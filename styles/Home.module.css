@@ -8,6 +8,19 @@
   height: 100vh;
 }
 
+.button {
+  padding: .7rem;
+  display: inline;
+  font-weight: bold;
+  background-color: #f38200;
+  color: white;
+  border-radius: 6px;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
 .main {
   padding: 5rem 0;
   flex: 1;
@@ -48,6 +61,7 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  color: #f38200;
 }
 
 .title,
