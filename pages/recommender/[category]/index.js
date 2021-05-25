@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import IndividualItem from '../../../components/IndividualItem'
 
 const category = ({items, cat}) => {
-    console.log(items);
+
     return (
         <div>
             <h2>{cat}</h2>
             <ul>
-                
+                {items.map(item => {
+                    return <IndividualItem item={item}></IndividualItem>
+                })}
             </ul>
         </div>
     )

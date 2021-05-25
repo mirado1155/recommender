@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const IndividualItem = item => {
+const IndividualItem = (item) => {
+    console.log(item);
     return (
-        <li>{item}</li>
+        <div>
+        <p>{item}</p>
+        </div>
     )
 }
 
