@@ -63,6 +63,7 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
 
     return (
         <section id="itemManager" className={styles.section}>
+            <h2 className={styles.recTitle}>Items</h2>
                 <label className={styles.label} htmlFor="toAdd">Add Item: </label>
                 <input type="text" id="toAdd" name={toAdd} value={toAdd} onChange={updateAdd} onKeyUp={handleKeyup}></input>
                 <button className={styles.addButton} onClick={handleClick} value="add" name={toAdd}>Add Item</button>

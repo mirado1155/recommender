@@ -24,15 +24,17 @@ const Recommender = items => {
 
     const outputArea = value => {
         let output
-        return !value ? <p>Click button to get recommendation</p>
-                : <p>{value}</p>
+        return !value ? <p className={styles.recOutput}>Click button to get recommendation</p>
+                : <p className={styles.recOutput}>{value}</p>
     }
 
     return (
         <section className={styles.section}>
-            <h2>Recommender</h2>
+            <h2 className={styles.recTitle}>Recommender</h2>
             {outputArea(selection)}
-            <button onClick={choose}>Recommend!</button>
+            <div>
+            <button className={styles.recommendButton} onClick={choose}>Recommend!</button>
+            </div>
         </section>
     )
 }

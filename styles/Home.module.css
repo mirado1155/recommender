@@ -1,5 +1,5 @@
 .container {
-  min-height: 100vh;
+  min-height: 75vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -36,12 +36,25 @@
 }
 
 .section {
-  margin: 3rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  border: 2px solid darkgray;
+  border-radius: 6px;
 }
 
-.addButton, .recommendButton {
+
+.addButton{
   padding: .4rem;
   margin-left: .5rem;
+}
+
+.recommendButton {
+  padding: .4rem;
+  margin: auto;
+}
+
+.buttonContainer {
+  text-align: center;
 }
 
 .header {
@@ -88,10 +101,21 @@
   text-decoration: underline;
 }
 
-.title, .itemTitle {
+.title, .itemTitle, .recTitle {
   font-size: 4rem;
   color: #f38200;
   margin: 0;
+}
+
+.recTitle {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.recOutput {
+  margin: 6rem 0;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .code {
@@ -108,7 +132,7 @@
   /* align-items: center; */
   /* justify-content: center; */
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 80%;
   /* margin-top: 3rem; */
 }
 
