@@ -3,6 +3,7 @@ import Recommender from '../../../components/Recommender'
 import ItemManager from '../../../components/ItemManager'
 import Link from 'next/link'
 import styles from '../../../styles/Home.module.css'
+import config from '../../../config.json'
 
 const category = ({categoryItems, cat}) => {
     const [pageItems, setPageItems] = useState()
@@ -32,7 +33,7 @@ const category = ({categoryItems, cat}) => {
 export const getServerSideProps = async context => {
     // const res = await fetch(`http://192.168.0.103:3000/categories/${context.params.category}`)
 
-    const res = await fetch(`http://localhost:3000/categories/${context.params.category}`)
+    const res = await fetch(config.baseURL + context.params.category)
 
     const categoryItems = await res.json()
     const cat = context.params.category

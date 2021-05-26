@@ -3,10 +3,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import CategoryItem from '../components/CategoryItem'
 import React, {useState} from 'react'
+import config from '../config.json'
 
 export async function getStaticProps() {
-  // const res = await fetch('http://192.168.0.103:3000/categories');
-  const res = await fetch('http://localhost:3000/categories');
+  const res = await fetch(config.baseURL);
   const categories = await res.json();
   return {
     props: {
@@ -20,6 +20,8 @@ export default function Home({ categories }) {
 
   const [cats, setCats] = useState()
   const [toAdd, setToAdd] = useState("")
+
+  console.log(config.baseURL)
 
   !cats ? setCats(categories) : null
 
@@ -37,15 +39,16 @@ export default function Home({ categories }) {
   }
 
   const updateAdd = event => {
-
+    setToAdd(event.target.value)
   }
+  console.log(toAdd)
 
 
   const updateCategoriesList = (name, action) => {
     console.log(cats[name])
     let categoriesToUpdate = cats
     
-    action == "POST" ? categoriesToUpdate.push(name) : null 
+    action == "POST" ? categoriesToUpdate[name] = [] : null 
     action == "DELETE" ? delete categoriesToUpdate[name] : null
     setCats(categoriesToUpdate)
     setToAdd("")
@@ -54,7 +57,7 @@ export default function Home({ categories }) {
 
 
   const manageCategories = async (name, action) => {
-    const res = await fetch ('http://localhost:3000/categories/', {
+    const res = await fetch (config.baseURL, {
             method: action,
             body: JSON.stringify({
               name: `${name}`
@@ -83,7 +86,8 @@ export default function Home({ categories }) {
 
         <p className={styles.description}>
           Click a category below to view, or add a new one here:
-          <input type="text"></input>
+          <input type="text" onChange={updateAdd} onKeyUp={handleKeyup} name={toAdd} value={toAdd}></input>
+          <a className={styles.catRemove} name={toAdd} type="POST" onClick={handleClick} title='Add Category?'>Add Category</a>
           {/* <code className={styles.code}>pages/index.js</code> */}
         </p>
 

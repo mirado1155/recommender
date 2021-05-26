@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import IndividualItem from '../components/IndividualItem'
 import styles from '../styles/Home.module.css'
+import config from '../config.json'
 
 const ItemManager = ({categoryItems, cat, updatePageItems}) => {
     const [items, setItems] = useState()
@@ -29,7 +30,7 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
     const manageItem = async (name, action) => {
 
         // const res = await fetch (`http://192.168.0.103:3000/categories/${cat}`, {
-        const res = await fetch (`http://localhost:3000/categories/${cat}`, {
+        const res = await fetch (config.baseURL + cat, {
             method: 'PUT',
             body: JSON.stringify({
                 name: `${name}`,
