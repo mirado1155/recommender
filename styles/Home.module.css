@@ -15,6 +15,12 @@
 
 .itemText {
   font-size: 1.33rem;
+  padding: .7rem;
+}
+
+.itemText:hover {
+  background-color: rgb(218, 246, 255);
+  border-radius: 7px;
 }
 
 .label {
@@ -164,12 +170,16 @@
   display: inline-block;
 }
 
-.catRemove, .catAdd {
+.catRemove, .catAdd, .itemRemove {
   font-weight: bold;
   color: #f38200;
   cursor: pointer;
   margin-left: 20%;
   font-size: 1.5rem;
+}
+
+.itemRemove {
+  margin-left: 10px;
 }
 
 .catAdd {

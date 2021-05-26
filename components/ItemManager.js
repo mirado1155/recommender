@@ -71,11 +71,11 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
                 <button className={styles.addButton} onClick={handleClick} value="add" name={toAdd}>Add Item</button>
 
                 <div className="itemViewer">
-                    <ul>
+
                         {items ? itemsList.map(item => {
                             return item;
                         }) : null}
-                    </ul>
+
                 </div>
         </section>
 
