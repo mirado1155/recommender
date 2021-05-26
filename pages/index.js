@@ -54,13 +54,11 @@ export default function Home({ categories }) {
 
 
   const manageCategories = async (name, action) => {
-    let bodyName
-    action == "POST" ? bodyName = "name" : null
-    action == "DELETE" ? bodyName = "category" : null
-    let body = JSON.parse(`{"${bodyName}": "${name}"}`)
-    const res = await fetch (`http://localhost:3000/categories/`, {
+    const res = await fetch ('http://localhost:3000/categories/', {
             method: action,
-            body: JSON.stringify(body),
+            body: JSON.stringify({
+              name: `${name}`
+            }),
             headers: {
                 'Content-type': 'application/json'
             }
