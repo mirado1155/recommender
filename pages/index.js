@@ -24,6 +24,11 @@ export default function Home({ categories }) {
 
   const handleClick = event => {
 
+    let name = event.target.name
+    let action = event.target.type
+
+    console.log(name + " " + action)
+    manageCategories(name, action)
   }
 
   const handleKeyup = () => {
@@ -36,12 +41,14 @@ export default function Home({ categories }) {
 
 
   const updateCategoriesList = (name, action) => {
+    console.log(cats[name])
     let categoriesToUpdate = cats
+    
     action == "POST" ? categoriesToUpdate.push(name) : null 
-    action == "DELETE" ? categoriesToUpdate.splice(categoriesToUpdate.indexOf(name), 1) : null
-    setCats([...categoriesToUpdate])
-    updatePageItems([...categoriesToUpdate])
+    action == "DELETE" ? delete categoriesToUpdate[name] : null
+    setCats(categoriesToUpdate)
     setToAdd("")
+    window.location.reload()
   }
 
 
@@ -49,11 +56,10 @@ export default function Home({ categories }) {
     let bodyName
     action == "POST" ? bodyName = "name" : null
     action == "DELETE" ? bodyName = "category" : null
-    const res = await fetch (`http://192.168.0.103:3000/categories/${cat}`, {
+    let body = JSON.parse(`{"${bodyName}": "${name}"}`)
+    const res = await fetch (`http://192.168.0.103:3000/categories/`, {
             method: action,
-            body: `{
-              ${bodyName}: ${name},
-            }`,
+            body: JSON.stringify(body),
             headers: {
                 'Content-type': 'application/json'
             }

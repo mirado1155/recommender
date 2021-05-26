@@ -33,6 +33,7 @@
 .removeButton {
   
   border-radius: 10px;
+  margin-left: 7px;
 }
 
 .section {
@@ -131,7 +132,7 @@
 .grid {
   display: flex;
   /* align-items: center; */
-  /* justify-content: center; */
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 100%;
   /* margin-top: 3rem; */
@@ -139,8 +140,8 @@
 
 .card {
   margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
+  padding: 1rem;
+  text-align: center;
   color: inherit;
   text-decoration: none;
   border: 1px solid #eaeaea;
@@ -157,7 +158,17 @@
 }
 
 .card h2 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 .5rem 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.catRemove {
+  font-weight: bold;
+  color: #f38200;
+  cursor: pointer;
+  margin-left: 20%;
   font-size: 1.5rem;
 }
 
