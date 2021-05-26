@@ -5,7 +5,8 @@ import CategoryItem from '../components/CategoryItem'
 import React, {useState} from 'react'
 
 export async function getStaticProps() {
-  const res = await fetch('http://192.168.0.103:3000/categories');
+  // const res = await fetch('http://192.168.0.103:3000/categories');
+  const res = await fetch('http://localhost:3000/categories');
   const categories = await res.json();
   return {
     props: {
@@ -57,7 +58,7 @@ export default function Home({ categories }) {
     action == "POST" ? bodyName = "name" : null
     action == "DELETE" ? bodyName = "category" : null
     let body = JSON.parse(`{"${bodyName}": "${name}"}`)
-    const res = await fetch (`http://192.168.0.103:3000/categories/`, {
+    const res = await fetch (`http://localhost:3000/categories/`, {
             method: action,
             body: JSON.stringify(body),
             headers: {

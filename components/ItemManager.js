@@ -28,7 +28,8 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
     //Deals with adding and removing item from server
     const manageItem = async (name, action) => {
 
-        const res = await fetch (`http://192.168.0.103:3000/categories/${cat}`, {
+        // const res = await fetch (`http://192.168.0.103:3000/categories/${cat}`, {
+        const res = await fetch (`http://localhost:3000/categories/${cat}`, {
             method: 'PUT',
             body: JSON.stringify({
                 name: `${name}`,

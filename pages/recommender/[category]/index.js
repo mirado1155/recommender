@@ -30,7 +30,9 @@ const category = ({categoryItems, cat}) => {
 }
 
 export const getServerSideProps = async context => {
-    const res = await fetch(`http://192.168.0.103:3000/categories/${context.params.category}`)
+    // const res = await fetch(`http://192.168.0.103:3000/categories/${context.params.category}`)
+
+    const res = await fetch(`http://localhost:3000/categories/${context.params.category}`)
 
     const categoryItems = await res.json()
     const cat = context.params.category
