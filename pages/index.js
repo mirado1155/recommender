@@ -21,8 +21,6 @@ export default function Home({ categories }) {
   const [cats, setCats] = useState()
   const [toAdd, setToAdd] = useState("")
 
-  console.log(config.baseURL)
-
   !cats ? setCats(categories) : null
 
   const handleClick = event => {
@@ -34,8 +32,10 @@ export default function Home({ categories }) {
     manageCategories(name, action)
   }
 
-  const handleKeyup = () => {
-
+  const handleKeyup = event => {
+    let name = event.target.value
+    let action = "POST"
+    event.keyCode == 13 ? manageCategories(name, action) : null
   }
 
   const updateAdd = event => {
@@ -86,10 +86,10 @@ export default function Home({ categories }) {
 
         <p className={styles.description}>
           Click a category below to view, or add a new one here:
-          <input type="text" onChange={updateAdd} onKeyUp={handleKeyup} name={toAdd} value={toAdd}></input>
-          <a className={styles.catRemove} name={toAdd} type="POST" onClick={handleClick} title='Add Category?'>Add Category</a>
-          {/* <code className={styles.code}>pages/index.js</code> */}
+          <input className={styles.addInput} type="text" onChange={updateAdd} onKeyUp={handleKeyup} name={toAdd} value={toAdd}></input>
+          <a className={styles.catAdd} name={toAdd} type="POST" onClick={handleClick} title='Add Category?'>Add Category</a>
         </p>
+        <p>Click the x next to a category to delete it</p>
 
         <div className={styles.grid}>
           {Object.keys(categories).map((category) => (
