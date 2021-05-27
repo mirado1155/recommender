@@ -10,7 +10,7 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
     //Handles a click for either adding or removing an item
     const handleClick = event => {
         let name = event.target.name
-        let action = event.target.value
+        let action = event.target.type
         manageItem(name, action)
     }
 
@@ -68,7 +68,7 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
             <h2 className={styles.recTitle}>Items</h2>
                 <label className={styles.label} htmlFor="toAdd">Add Item: </label>
                 <input type="text" id="toAdd" name={toAdd} value={toAdd} onChange={updateAdd} onKeyUp={handleKeyup}></input>
-                <button className={styles.addButton} onClick={handleClick} value="add" name={toAdd}>Add Item</button>
+                <button className={styles.addButton} onClick={handleClick} type="add" name={toAdd}>Add Item</button>
 
                 <div className="itemViewer">
 

@@ -5,7 +5,7 @@ const IndividualItem = ({item, removeItem}) => {
 
     return (
         <div className={styles.itemTextDiv}>
-            <p className={styles.itemText}>{item} <a className={styles.itemRemove} onClick={removeItem} name={item} value="remove">X</a></p>
+            <p className={styles.itemText}>{item} <a className={styles.itemRemove} onClick={removeItem} name={item} type="remove">X</a></p>
         </div>
     );
 }
