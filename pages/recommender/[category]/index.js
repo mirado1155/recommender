@@ -19,7 +19,7 @@ const category = ({categoryItems, cat}) => {
             <header className={styles.header}>
                 <h2 className={styles.itemTitle}>{cat}</h2>
                 <Link href="/">
-                    <button className={styles.button}>Go Back</button>
+                    <a className={styles.button}>Go Back</a>
                 </Link>
             </header>
             <div className={styles.grid}>

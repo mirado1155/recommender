@@ -33,7 +33,7 @@ const Recommender = items => {
             <h2 className={styles.recTitle}>Recommender</h2>
             {outputArea(selection)}
             <div className={styles.buttonContainer}>
-            <button className={styles.recommendButton} onClick={choose}>Recommend!</button>
+            <a className={styles.recommendButton} onClick={choose}>Recommend!</a>
             </div>
         </section>
     )

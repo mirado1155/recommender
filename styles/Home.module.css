@@ -8,11 +8,6 @@
   /* height: 100vh; */
 }
 
-.button {
-  padding: .7rem;
-  line-height:initial;
-}
-
 .itemText {
   font-size: 1.33rem;
   padding: .7rem;
@@ -34,10 +29,10 @@
   background-color: #f38200;
   color: white;
   font-weight: bold;
+  padding: .4rem;
 }
 
 .removeButton {
-  
   border-radius: 10px;
   margin-left: 7px;
 }
@@ -52,7 +47,6 @@
 
 
 .addButton{
-  padding: .4rem;
   margin-left: .5rem;
 }
 
@@ -61,7 +55,6 @@
 }
 
 .recommendButton {
-  padding: .4rem;
   margin: auto;
 }
 

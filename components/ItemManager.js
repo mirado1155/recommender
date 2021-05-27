@@ -16,7 +16,7 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
 
     //Handles a keyup specifically for adding an item
     const handleKeyup = event => {
-        let name = event.target.value
+        let name = event.target.name
         let action = "add"
         event.keyCode == 13 ? manageItem(name, action) : null
     }
@@ -69,7 +69,7 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
 
             <div className={styles.addForm}>
                 <input type="text" id="toAdd" name={toAdd} value={toAdd} onChange={updateAdd} onKeyUp={handleKeyup}></input>
-                <button className={styles.addButton} onClick={handleClick} type="add" name={toAdd}>Add Item</button>
+                <a className={styles.addButton} onClick={handleClick} type="add" name={toAdd}>Add Item</a>
             </div>
             <div className="itemViewer">
 
