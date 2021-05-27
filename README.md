@@ -22,7 +22,7 @@ Run the following:
 
 ```$npm install cors```
 
-Remove anything currently in app.js and replace it with [this.](#)
+Remove anything currently in app.js and replace it with [this.](https://github.com/mirado1155/recommender/blob/main/app.js)
 
 Create a JSON file called data.json. Inside of it, you can add an empty object ```{}```, or create your own, consisting of String values for your keys (categories), and String arrays for your values (items), like so: ```{"Restaurants": ["Osteria Papavero", "Sals", "Tacqueria Gonzalez"], "Movies": ["Shaun of the Dead", "Hot Fuzz"]}```
 
