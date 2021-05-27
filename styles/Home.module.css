@@ -56,6 +56,10 @@
   margin-left: .5rem;
 }
 
+.addForm {
+  text-align: center;
+}
+
 .recommendButton {
   padding: .4rem;
   margin: auto;
@@ -210,5 +214,32 @@
   .section {
     width: 90%;
     margin: 1rem, auto;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .catAdd {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .itemTitle {
+    font-size: 3rem;
   }
 }

@@ -81,7 +81,7 @@ export default function Home({ categories }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <a href="https://github.com/mirado1155">Recommender!</a>
+          <a href="https://github.com/mirado1155">Recommender</a>
         </h1>
 
         <p className={styles.description}>

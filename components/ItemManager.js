@@ -66,17 +66,18 @@ const ItemManager = ({categoryItems, cat, updatePageItems}) => {
     return (
         <section id="itemManager" className={styles.section}>
             <h2 className={styles.recTitle}>Items</h2>
-                <label className={styles.label} htmlFor="toAdd">Add Item: </label>
+
+            <div className={styles.addForm}>
                 <input type="text" id="toAdd" name={toAdd} value={toAdd} onChange={updateAdd} onKeyUp={handleKeyup}></input>
                 <button className={styles.addButton} onClick={handleClick} type="add" name={toAdd}>Add Item</button>
+            </div>
+            <div className="itemViewer">
 
-                <div className="itemViewer">
+                    {items ? itemsList.map(item => {
+                        return item;
+                    }) : null}
 
-                        {items ? itemsList.map(item => {
-                            return item;
-                        }) : null}
-
-                </div>
+            </div>
         </section>
 
     )
