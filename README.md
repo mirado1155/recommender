@@ -7,7 +7,7 @@ This app allows users to create and remove categories. They can then add and rem
 Great for settling disputes!
 
 
-Demo video of app:
+Demo video of app: https://www.youtube.com/watch?v=mr9hSQ4EbeU
 
 Built using react/next.js
 
